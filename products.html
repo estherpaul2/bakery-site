@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Star Bakery | Our Products</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <p>North Star Bakery</p>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Products</a></li>
+        <li><a href="about.html">About Our Bakery</a></li>
+        <li><a href="contact.html">Contact and Pre-Orders</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Handmade Products</h1>
+    <p>Everything is baked fresh daily in small batches. Prices are estimates, and online checkout is not required. Save the items you want to My Pre-Order List, then send your request on the contact page and pay at pickup.</p>
+
+    <section>
+      <h2>Breads</h2>
+      <img src="media/bakery-bread_c.png" width="400" alt="Rustic loaves in a bakery display case, including a dark seeded loaf and flour-dusted country loaves">
+      <p>Sourdough, whole wheat, rye, and seasonal specialty loaves with a crisp crust and tender crumb.</p>
+      <p>Price range: $6 to $10 per loaf</p>
+      <button type="button" class="fav-btn" data-id="breads" aria-pressed="false">Add to My Pre-Order List</button>
+    </section>
+
+    <section>
+      <h2>Pastries</h2>
+      <p>Flaky croissants, fruit danishes, scones, and morning buns made with real butter.</p>
+      <p>Price range: $3 to $6 each</p>
+      <button type="button" class="fav-btn" data-id="pastries" aria-pressed="false">Add to My Pre-Order List</button>
+    </section>
+
+    <section>
+      <h2>Cakes</h2>
+      <p>Custom celebration cakes and everyday slices. Please allow at least 72 hours for custom orders.</p>
+      <p>Price range: $4 to $7 per slice, $35 to $95 for whole cakes</p>
+      <button type="button" class="fav-btn" data-id="cakes" aria-pressed="false">Add to My Pre-Order List</button>
+    </section>
+
+    <section>
+      <h2>Signature Loaf</h2>
+      <figure>
+        <img src="media/bakery-signature-loaf_c.png" width="400" alt="Round rustic loaf with a dark, flour-dusted crust resting on a white checkered kitchen towel">
+        <figcaption>Our Signature Loaf: slow-fermented for 24 hours and baked fresh every morning.</figcaption>
+      </figure>
+      <p>Price: $9 per loaf</p>
+      <button type="button" class="fav-btn" data-id="signature-loaf" aria-pressed="false">Add to My Pre-Order List</button>
+    </section>
+
+    <section id="preorder-list">
+      <h2>My Pre-Order List</h2>
+      <p id="favorites-count" aria-live="polite">0 items saved</p>
+      <p id="favorites-empty">Your list is empty. Choose "Add to My Pre-Order List" on any product above.</p>
+      <ul id="favorites-list"></ul>
+      <button type="button" id="clear-favorites" hidden>Clear My List</button>
+      <p><a href="contact.html">Send my pre-order request</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+    <p>123 Maple Street, Minneapolis, MN 55401 | <a href="contact.html">Contact Us</a></p>
+  </footer>
+</body>
+</html>

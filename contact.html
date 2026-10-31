@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Star Bakery | Contact and Pre-Orders</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <p>North Star Bakery</p>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Our Products</a></li>
+        <li><a href="about.html">About Our Bakery</a></li>
+        <li><a href="contact.html">Contact and Pre-Orders</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact Us and Pre-Order</h1>
+    <p>Have a question or want to reserve fresh baked goods? Fill out the form below and we'll reply within one business day.</p>
+
+    <section>
+      <h2>Inquiry and Pre-Order Request</h2>
+      <p id="favorites-note" hidden></p>
+      <p id="form-message" class="success" role="status" tabindex="-1" hidden></p>
+
+      <form id="preorder-form" action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Your Contact Information</legend>
+          <p>
+            <label for="name">Full name (required)</label><br>
+            <input type="text" id="name" name="name" required minlength="2" maxlength="60" pattern="[A-Za-z .'\-]{2,60}" title="Use letters, spaces, apostrophes, periods, or hyphens only." autocomplete="name">
+            <span class="error" id="name-error" aria-live="polite"></span>
+          </p>
+          <p>
+            <label for="email">Email address (required)</label><br>
+            <input type="email" id="email" name="email" required autocomplete="email">
+            <span class="error" id="email-error" aria-live="polite"></span>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Request</legend>
+          <p>
+            <label for="request-type">Request type (required)</label><br>
+            <select id="request-type" name="request-type" required>
+              <option value="">Select one</option>
+              <option value="preorder">Pre-order</option>
+              <option value="event">Event or catering inquiry</option>
+              <option value="question">General question</option>
+            </select>
+            <span class="error" id="request-type-error" aria-live="polite"></span>
+          </p>
+          <p>
+            <label for="pickup-date">Preferred pickup date (required)</label><br>
+            <input type="date" id="pickup-date" name="pickup-date" required>
+            <span class="error" id="pickup-date-error" aria-live="polite"></span>
+          </p>
+          <p>
+            <label for="item-details">Item details (required)</label><br>
+            <textarea id="item-details" name="item-details" rows="4" cols="40" required minlength="10" maxlength="500" placeholder="Example: 2 Signature Loaves and 6 croissants"></textarea>
+            <span class="error" id="item-details-error" aria-live="polite"></span>
+          </p>
+          <p>
+            <label for="allergies">Allergy notes (optional)</label><br>
+            <textarea id="allergies" name="allergies" rows="3" cols="40" maxlength="300" placeholder="Example: tree nut allergy"></textarea>
+            <span class="error" id="allergies-error" aria-live="polite"></span>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Send Request</button>
+          <button type="reset">Clear Form</button>
+        </p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Location</h2>
+      <address>
+        North Star Bakery<br>
+        123 Maple Street<br>
+        Minneapolis, MN 55401<br>
+        Phone: <a href="tel:+16125550123">(612) 555-0123</a>
+      </address>
+    </section>
+
+    <section>
+      <h2>Hours of Operation</h2>
+      <ul>
+        <li>Monday to Friday: 6:30 AM to 5:00 PM</li>
+        <li>Saturday: 7:00 AM to 4:00 PM</li>
+        <li>Sunday: 8:00 AM to 2:00 PM</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 North Star Bakery. All rights reserved.</p>
+    <p>123 Maple Street, Minneapolis, MN 55401 | <a href="contact.html">Contact Us</a></p>
+  </footer>
+</body>
+</html>
