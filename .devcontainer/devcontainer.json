@@ -1,0 +1,11 @@
+{
+  "name": "Bakery Site Workspace",
+  "forwardPorts":[8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Web Server",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postAttachCommand": "nohup python3 -m http.server 8000 > /dev/null 2>&1 &"
+}

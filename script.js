@@ -49,7 +49,7 @@ function saveFavorites() {
   }
 }
 
-/* ===== Product page: favorites feature ===== */
+/* ===== Products page: favorites feature ===== */
 function findProduct(id) {
   return products.find(function (product) { return product.id === id; });
 }
@@ -229,17 +229,23 @@ function clearDraft() {
   try { localStorage.removeItem(STORAGE_KEYS.draft); } catch (error) { /* ignore */ }
 }
 
+// FIXED: fills Item details when it is empty OR only holds an earlier auto-filled list.
+// Text the visitor typed themselves is never overwritten.
 function prefillFromFavorites() {
   const note = document.getElementById("favorites-note");
+  const details = document.getElementById("item-details");
   if (favorites.length === 0) return;
 
   const names = favorites.map(function (id) { return findProduct(id).name; });
-  const details = document.getElementById("item-details");
+  const autoText = "Pre-order list: " + names.join(", ");
+
   note.textContent = "Your saved pre-order list: " + names.join(", ") + ".";
   note.hidden = false;
 
-  if (details.value.trim() === "") {
-    details.value = "Pre-order list: " + names.join(", ");
+  const current = details.value.trim();
+  if (current === "" || current.indexOf("Pre-order list:") === 0) {
+    details.value = autoText;
+    clearError("item-details");
     saveDraft();
   }
 }

@@ -1,7 +1,7 @@
-
 /* =========================================
    NORTH STAR BAKERY
    Touchstone 3 - Visual Design and Layout
+   Touchstone 4 - Interactivity styles
    ========================================= */
 
 /* 1. COLOUR PALETTE */
@@ -293,7 +293,113 @@ footer a:focus-visible {
   background-color: var(--tan);
 }
 
-/* 12. RESPONSIVE DESIGN
+/* 12. TOUCHSTONE 4: PRE-ORDER LIST AND PRODUCT IMAGES */
+
+/* Product images share one size so the cards line up */
+main > section > img,
+main > section > figure img {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Button changes look once an item is saved */
+.fav-btn[aria-pressed="true"] {
+  color: var(--ink);
+  background-color: var(--tan);
+  border-color: var(--brown);
+}
+
+#favorites-list li {
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+#favorites-count {
+  font-weight: bold;
+}
+
+/* 13. TOUCHSTONE 4: FORM FEEDBACK */
+
+/* Inline error message under each field */
+.error {
+  display: block;
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: var(--ink);
+}
+
+.error:not(:empty) {
+  max-width: 520px;
+  padding: 0.4rem 0.6rem;
+  background-color: var(--tan);
+  border-left: 6px solid var(--brown);
+  border-radius: 4px;
+}
+
+.error:not(:empty)::before {
+  content: "Error: ";
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-width: 4px;
+  border-color: var(--ink);
+}
+
+/* Success message and saved-list note */
+.success,
+#favorites-note {
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  color: var(--ink);
+  background-color: var(--tan);
+  border-left: 6px solid var(--brown);
+  border-radius: 4px;
+}
+
+/* Required star and popup-style summary box */
+.req-star {
+  color: var(--brown);
+  font-weight: bold;
+}
+
+.required-note {
+  font-weight: bold;
+}
+
+.error-summary {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: var(--ink);
+  background-color: var(--tan);
+  border: 4px solid var(--ink);
+  border-radius: 8px;
+}
+
+.error-summary ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.error-summary a {
+  color: var(--ink);
+}
+
+.error-summary:focus {
+  outline: 3px solid var(--brown);
+  outline-offset: 2px;
+}
+
+/* Keep the hidden attribute working on elements styled above */
+[hidden] {
+  display: none !important;
+}
+
+/* 14. RESPONSIVE DESIGN
    Larger screens: 768px and above
 */
 
@@ -369,7 +475,7 @@ footer a:focus-visible {
   }
 }
 
-/* 13. SMALL SCREEN ADJUSTMENTS */
+/* 15. SMALL SCREEN ADJUSTMENTS */
 
 @media (max-width: 400px) {
 
